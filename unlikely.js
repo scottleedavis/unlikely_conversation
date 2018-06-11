@@ -67,7 +67,7 @@ function generate() {
     let data = {
       seed: txt,
       temperature: 0.9, 
-      length: txt.length * 2 > 150 ? txt.length * 2 : 150
+      length: Math.min(Math.max(parseInt(number), 50), 250);
     };
 
     switch( ctr++ % 4) {
