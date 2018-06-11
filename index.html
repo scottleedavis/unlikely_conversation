@@ -1,0 +1,123 @@
+<html>
+<head>
+	<script src="./ml5.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.16/p5.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.16/addons/p5.dom.min.js"></script>
+	<style>
+		.content {
+
+		}
+		body {
+	      background-color: black;
+	      color: white;
+	    }
+	    .title {
+	      color: yellow;
+	    }
+	    .page {
+	      display: flex;
+	      flex-direction: column;
+	      align-items: center;
+	      justify-content: center;
+	    }
+	    #status-trump {
+	      color: red;
+	      font-family: monospace;
+	      font-size: 20px;
+	      margin: 30px;
+	    }
+	   	#status-darwin {
+	      color: red;
+	      font-family: monospace;
+	      font-size: 20px;
+	      margin: 30px;
+	    }
+	    #status-shakespeare {
+	      color: red;
+	      font-family: monospace;
+	      font-size: 20px;
+	      margin: 30px;
+	    }
+	    #status-hemingway {
+	      color: red;
+	      font-family: monospace;
+	      font-size: 20px;
+	      margin: 30px;
+	    }
+	    .input {
+	    	display: flex;
+		    flex-direction: column;
+		}
+	    #textInput {
+	    	width: 300px;
+	    	height: 80px;
+	    }
+	    #result {
+	    	color: white;
+    	    font-size: 22px;
+	    }
+	    #donald {
+	    	width: 150px;
+	    	height: 150px;
+	    }
+	    .output {
+		    width: 50%;
+		    border: 1px white solid;
+		    margin-top: 10px;
+		    min-height: 25px;
+	    }
+	    .references {
+	    	color: white;
+      		margin-top: 20px;
+	    }
+	    .references a {
+      		color: yellow;
+    	}
+    	.participants {
+    		display: flex;
+    	}
+	</style>
+</head>
+<body>
+	<div class="page">
+		<h2 class="title">Unlikely Conversation</h2>
+		<div class="participants">
+		<div>
+		<span>Trump</span>
+		<p id="status-trump">Loading Model:</p>
+		</div>
+		<div>
+		<span>Hemingway</span>
+		<p id="status-hemingway">Loading Model:</p>
+		</div>
+		<div>
+		<span>Darwin</span>
+		<p id="status-darwin">Loading Model:</p>
+		</div>
+		<div>
+		<span>Shakespeare</span>
+		<p id="status-shakespeare">Loading Model:</p>
+		</div>
+		</div>
+		<div class="input">
+			<span>Start the conversation</span>
+			<textarea id="textInput" value="" maxlength="280" onkeypress="onEnterPressed()"/></textarea>
+		</div>
+		<div>
+			<button id="generate">generate</button>
+			<span>(or press enter)
+		</div>
+		<div class="output">
+			<p id="result"></p>
+		</div>
+		<div class="references">
+			<ul> 
+			<li><a href="https://ml5js.org/"> ml5js</a> application (built on top of <a href="https://js.tensorflow.org/">tensorflow.js</a>)
+			<li>Models: <a href="https://en.wikipedia.org/wiki/Long_short-term_memory">LTSM</a> of Hemingwary, Darwin, Shakespeare and Trump
+			</ul>
+			<span>source code: <a href="https://github.com/scottleedavis/unlikely_conversation">https://github.com/scottleedavis/unlikely_conversation</a></span>
+		</div>
+	</div>
+	<script src="unlikely.js"></script>
+</body>
+</html>
