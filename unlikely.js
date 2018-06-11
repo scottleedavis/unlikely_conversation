@@ -67,7 +67,7 @@ function generate() {
     let data = {
       seed: txt,
       temperature: 0.9, 
-      length: Math.min(Math.max(parseInt(number), 50), 250);
+      length: Math.min(Math.max(parseInt(txt.length * 2), 50), 250)
     };
 
     switch( ctr++ % 4) {
@@ -76,7 +76,6 @@ function generate() {
 
     function gotDataShakespeare(result) {
       select('#status-shakespeare').html('Ready!');
-      // select('#result').html(merge(txt,result.generated));
       textInput.value(result.generated);
       select('#result').html(result.generated+'<hr>'+select('#result').html());
       setTimeout(function(){
@@ -89,7 +88,6 @@ function generate() {
 
     function gotDataTrump(result) {
       select('#status-trump').html('Ready!');
-      // select('#result').html(merge(txt,result.generated));
       textInput.value(result.generated);
       select('#result').html(result.generated+'<hr>'+select('#result').html());
       setTimeout(function(){
@@ -102,7 +100,6 @@ function generate() {
 
     function gotDataDarwin(result) {
       select('#status-darwin').html('Ready!');
-      // select('#result').html(merge(txt,result.generated));
       textInput.value(result.generated);
       select('#result').html(result.generated+'<hr>'+select('#result').html());
       setTimeout(function(){
@@ -116,7 +113,6 @@ function generate() {
 
     function gotDataHemingway(result) {
       select('#status-hemingway').html('Ready!');
-      // select('#result').html(merge(txt,result.generated));
       textInput.value(result.generated);
       select('#result').html(result.generated+'<hr>'+select('#result').html());
       setTimeout(function(){
@@ -127,22 +123,6 @@ function generate() {
     }
   }
 
-
-}
-
-function merge (str1, str2) {
-
-  const a = str1.split(" ").filter(Boolean);
-  const b = str2.split(" ");
-  let mergedString = '';
-
-  for(let i = 0; i < a.length || i < b.length; i++) {  //loop condition checks if i is less than a.length or b.length
-   if(i < a.length)  //if i is less than a.length add a[i] to string first.
-     mergedString +=  a[i] + ' ';
-   if(i < b.length)  //if i is less than b.length add b[i] to string.
-     mergedString +=  b[i] + ' ';
-  }
-  return mergedString;
 
 }
 
