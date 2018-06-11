@@ -77,7 +77,7 @@ function generate() {
     function gotDataShakespeare(result) {
       select('#status-shakespeare').html('Ready!');
       textInput.value(result.generated);
-      select('#result').html(result.generated+'<hr>'+select('#result').html());
+      select('#result').html('<h3>shakespeare</h3>'+result.generated+'<hr>'+select('#result').html());
       setTimeout(function(){
         generate();
       }, 1000);
@@ -89,7 +89,7 @@ function generate() {
     function gotDataTrump(result) {
       select('#status-trump').html('Ready!');
       textInput.value(result.generated);
-      select('#result').html(result.generated+'<hr>'+select('#result').html());
+      select('#result').html('<h3>trump</h3>'+result.generated+'<hr>'+select('#result').html());
       setTimeout(function(){
         generate();
       }, 1000);
@@ -101,7 +101,7 @@ function generate() {
     function gotDataDarwin(result) {
       select('#status-darwin').html('Ready!');
       textInput.value(result.generated);
-      select('#result').html(result.generated+'<hr>'+select('#result').html());
+      select('#result').html('<h3>darwin</h3>'+result.generated+'<hr>'+select('#result').html());
       setTimeout(function(){
         generate();
       }, 1000);
@@ -114,7 +114,7 @@ function generate() {
     function gotDataHemingway(result) {
       select('#status-hemingway').html('Ready!');
       textInput.value(result.generated);
-      select('#result').html(result.generated+'<hr>'+select('#result').html());
+      select('#result').html('<h3>hemingway</h3>'+result.generated+'<hr>'+select('#result').html());
       setTimeout(function(){
         generate();
       }, 1000);
